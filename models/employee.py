@@ -10,5 +10,4 @@ class Employee(Base):
     birth_date = Column(Date)
     
     department_id = Column(String, ForeignKey("departments.id"), nullable = False)
-    department = relationship("Department", back_populates = "employee")
-
+    department = relationship("Department", back_populates = "employees")

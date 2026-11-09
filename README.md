@@ -32,6 +32,24 @@ The Equipment Maintenance API is a backend system for organizing equipment maint
 
 Maintenance records do not currently have update or delete endpoints.
 
+## Running tests
 
+Install the project dependencies and the test tools, then run the test suite:
 
-This project was created by me for learning purposes. It is a practice project and is not intended to be used as a production system. The JWT secret currently configured in the project is a development placeholder; do not use it for a deployed or shared application.
+```bash
+python -m pip install -r requirements.txt pytest httpx
+python -m pytest
+```
+
+## Running in Docker
+
+Install Docker with Compose, then set a unique JWT secret and start the API:
+
+```bash
+export SECRET_KEY="$(python -c 'import secrets; print(secrets.token_urlsafe(32))')"
+docker compose up --build
+```
+
+The API is available at <http://localhost:8000>, and its interactive documentation is at <http://localhost:8000/docs>. Compose stores the SQLite database in the persistent `app_data` volume. To stop the container without deleting database data, run `docker compose down`.
+
+The application is a learning project and is not intended for production use. When running outside Docker, configure a unique `SECRET_KEY`; the built-in development default is not suitable for deployed or shared applications.

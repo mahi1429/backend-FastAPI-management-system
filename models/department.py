@@ -9,5 +9,4 @@ class Department(Base):
 
     employees = relationship("Employee", back_populates = "department")
     equipments = relationship("Equipment", back_populates = "department")
-    
-
+    users = relationship("User", back_populates="department")
