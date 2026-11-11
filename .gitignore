@@ -9,12 +9,12 @@ venv/
 env/
 ENV/
 
-# Local environment and secrets
+# Local environment 
 .env
 .env.*
 !.env.example
 
-# Local database files (including the HR account stored in data.db)
+# Local database files 
 *.db
 *.db-shm
 *.db-wal
