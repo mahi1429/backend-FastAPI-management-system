@@ -50,6 +50,6 @@ export SECRET_KEY="$(python -c 'import secrets; print(secrets.token_urlsafe(32))
 docker compose up --build
 ```
 
-The API is available at <http://localhost:8000>, and its interactive documentation is at <http://localhost:8000/docs>. Compose stores the SQLite database in the persistent `app_data` volume. To stop the container without deleting database data, run `docker compose down`.
+Compose stores the SQLite database in the persistent `app_data` volume. To stop the container without deleting database data, run `docker compose down`.
 
 The application is a learning project and is not intended for production use. When running outside Docker, configure a unique `SECRET_KEY`; the built-in development default is not suitable for deployed or shared applications.
